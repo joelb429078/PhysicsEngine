@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cmath>
+#include "Matrix.h"
+#include "Vector.h"
 using namespace std;
 
 class Vector {
@@ -49,10 +51,12 @@ class Vector {
       }
     }
 
-    void matrix_mulp(const Matrix& mulp_matrix){
+    void matrix_mult(const Matrix& mulp_matrix)
+    {
       x_value = (x_value * mulp_matrix.get_first_value()) +(y_value * mulp_matrix.get_second_value());
       y_value = (x_value * mulp_matrix.get_third_value()) +(y_value * mulp_matrix.get_fourth_value());
     }
+
 
     void rotate(double degrees){
       //anti-clockwise rotation

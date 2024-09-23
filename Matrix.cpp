@@ -1,7 +1,6 @@
+#include "Matrix.h"
 #include <iostream>
 #include <cmath>
-using namespace std;
-
 class Matrix {
     /* (1,2,3,4) =  (1 2)
                     (3 4)*/
