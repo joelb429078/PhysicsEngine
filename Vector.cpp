@@ -8,6 +8,7 @@ class Vector {
     double y_value;
 
   public:
+    Vector() : x_value(0), y_value(0) {}
     Vector(double x, double y) : x_value(x), y_value(y) {}
 
     double get_x_value() const {
@@ -47,4 +48,6 @@ class Vector {
         scalar_mulp(1 / len);
       }
     }
+};
+
 };
