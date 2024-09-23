@@ -47,4 +47,4 @@ class Vector {
         scalar_mulp(1 / len);
       }
     }
-}
+};
