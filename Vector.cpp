@@ -48,6 +48,16 @@ class Vector {
         scalar_mulp(1 / len);
       }
     }
-};
 
+    void matrix_mulp(const Matrix& mulp_matrix){
+      x_value = (x_value * mulp_matrix.get_first_value()) +(y_value * mulp_matrix.get_second_value());
+      y_value = (x_value * mulp_matrix.get_third_value()) +(y_value * mulp_matrix.get_fourth_value());
+    }
+
+    void rotate(double degrees){
+      //anti-clockwise rotation
+      Matrix rot_matrix(cos(M_PI*degrees/180),sin(M_PI*degrees/180),
+                        -sin(M_PI*degrees/180),cos(M_PI*degrees/180));
+      matrix_mulp(rot_matrix);
+    }
 };
