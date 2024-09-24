@@ -30,7 +30,7 @@ class Vector {
 
     void normalise() ;
 
-    void matrix_mult(const Matrix& mulp_matrix);
+    void matrix_mulp(const Matrix& mulp_matrix);
     
     void rotate(double degrees);
 };
