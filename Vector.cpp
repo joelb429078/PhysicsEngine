@@ -51,7 +51,7 @@ class Vector {
       }
     }
 
-    void matrix_mult(const Matrix& mulp_matrix)
+    void matrix_mulp(const Matrix& mulp_matrix)
     {
       x_value = (x_value * mulp_matrix.get_first_value()) +(y_value * mulp_matrix.get_second_value());
       y_value = (x_value * mulp_matrix.get_third_value()) +(y_value * mulp_matrix.get_fourth_value());
