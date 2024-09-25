@@ -56,4 +56,48 @@ public:
 };
 
 
+class Circle: public RigidBody
+{
+private:
+    float radius;
+public:
+    Circle(Vector startPosition, float objectMass, bool objectStatic, float inertia, float rotation, float objectRadius) : RigidBody(startPosition, objectMass, objectStatic, inertia, rotation){
+        radius = objectRadius;
+    }
+    void Draw(){
+        // Draw circle
+    }
+
+    bool CheckCollision(Circle* otherCircle){
+        Vector distanceVector = Vector(position.get_x_value() - otherCircle->position.get_x_value(), position.get_y_value() - otherCircle->position.get_y_value());
+        float distance = distanceVector.length();
+        return distance <= radius + otherCircle->radius;
+    }
+
+    void Update(float deltaTime) override{
+        RigidBody::Update(deltaTime);
+        Draw();
+    }
+};
+
+
+class Rectangle: public RigidBody
+{
+private:
+    float width;
+    float height;
+public:
+    Rectangle(Vector startPosition, float objectMass, bool objectStatic, float inertia, float rotation, float objectWidth, float objectHeight) : RigidBody(startPosition, objectMass, objectStatic, inertia, rotation){
+        width = objectWidth;
+        height = objectHeight;
+    }
+    void Draw(){
+        // Draw rectangle
+    }
+
+    void Update(float deltaTime) override{
+        RigidBody::Update(deltaTime);
+        Draw();
+    }
+};
 
