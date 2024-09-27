@@ -29,6 +29,10 @@ public:
         force.scalar_mulp(1/mass);
         acceleration.vector_add(force);
     }
+
+    Vector GetPosition(){
+        return position;
+    }
 };
 
 class  RigidBody: public Object
