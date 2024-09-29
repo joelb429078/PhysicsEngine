@@ -21,6 +21,31 @@ class Vector {
       return y_value;
     }
 
+    // Overloading + operator for vector addition
+    Vector operator+(const Vector& other) const {
+      return Vector(x_value + other.x_value, y_value + other.y_value);
+    }
+
+    // Overloading - operator for vector subtraction
+    Vector operator-(const Vector& other) const {
+      return Vector(x_value - other.x_value, y_value - other.y_value);
+    }
+
+    // Overloading * operator for dot product (vector * vector)
+    double operator*(const Vector& other) const {
+      return (x_value * other.x_value + y_value * other.y_value);
+    }
+
+    // Overloading * operator for scalar multiplication (vector * scalar)
+    Vector operator*(double scalar) const {
+      return Vector(x_value * scalar, y_value * scalar);
+    }
+
+    // Overloading * operator for scalar multiplication (scalar * vector)
+    friend Vector operator*(double scalar, const Vector& vec) {
+      return Vector(vec.x_value * scalar, vec.y_value * scalar);
+    }
+
     void vector_add(const Vector& added_vector) {
       x_value += added_vector.get_x_value();
       y_value += added_vector.get_y_value();
