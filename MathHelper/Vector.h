@@ -18,6 +18,16 @@ class Vector {
 
     double get_y_value() const ;
 
+    Vector operator+(const Vector& other) const;      
+
+    Vector operator-(const Vector& other) const;          
+
+    double operator*(const Vector& other) const;        
+
+    Vector operator*(double scalar) const;         
+
+    friend Vector operator*(double scalar, const Vector& vec); 
+
     void vector_add(const Vector& added_vector) ;
 
     void scalar_mulp(double scalar) ;
